@@ -11,5 +11,6 @@ chrono = { version = "0.4.0", features = ["serde"] }
 futures-core = "0.3.0"
 futures-util = "0.3.0"
 mysql_async = "0.23.0"
-trawler = "0.11.0-alpha.7"
+tokio = { version = "0.2.0", features = ["full"] }
 tower-service = "0.3.0"
+trawler = "0.11.0-alpha.7"

@@ -289,8 +289,9 @@ impl trawler::AsyncShutdown for MysqlTrawler {
     }
 }
 
-fn main() {
-    let args = App::new("lobsters-mysql")
+#[tokio::main]
+async fn main() {
+    let args = App::new("mysql-trawl")
         .version("0.1")
         .about("Benchmark a lobste.rs Rails installation using MySQL directly")
         .arg(
@@ -316,7 +317,7 @@ fn main() {
             Arg::with_name("queries")
                 .short("q")
                 .long("queries")
-                .possible_values(&["original", "noria", "natural"])
+                .possible_values(&["original", "natural"])
                 .takes_value(true)
                 .required(true)
                 .help("Which set of queries to run"),
